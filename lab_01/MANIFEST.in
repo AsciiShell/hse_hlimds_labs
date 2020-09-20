@@ -1,0 +1,4 @@
+include requirements*.txt
+include README.md
+include raspberrypi_lab_01/MobileNetSSD_deploy.caffemodel
+include raspberrypi_lab_01/MobileNetSSD_deploy.prototxt
