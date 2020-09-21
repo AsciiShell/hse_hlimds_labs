@@ -139,3 +139,20 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+*.bak
+
+~$*
+
+*.pdf
+
+*.aux
+
+*.log
+
+*.gz
+
+*.out
+
+*.toc
+
+*.synctex(busy)

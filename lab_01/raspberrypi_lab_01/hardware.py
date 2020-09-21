@@ -52,7 +52,7 @@ class GPIOWrap:
         self.close()
 
     def close(self):
-        del self.pins
+        del self.pins, self.pwms, self.state
         GPIO.cleanup()
 
 

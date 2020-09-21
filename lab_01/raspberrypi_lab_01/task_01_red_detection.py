@@ -12,7 +12,8 @@ def pos_to_deg(pos):
 LED_PIN = 23
 SERVO_PIN = 25
 OBJ_THRESHOLD = 0.1
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 logger = logging.getLogger(__name__)
 if __name__ == '__main__':
     logger.info('Begin')
@@ -32,10 +33,14 @@ if __name__ == '__main__':
         captured_frame_bgr = cv2.medianBlur(captured_frame_bgr, 3)
         captured_frame_lab = cv2.cvtColor(captured_frame_bgr, cv2.COLOR_BGR2Lab)
         # HSV color format
-        captured_frame_lab_red = cv2.inRange(captured_frame_lab, np.array([40, 170, 170]), np.array([220, 255, 255]))
-        captured_frame_lab_red = cv2.GaussianBlur(captured_frame_lab_red, (5, 5), 2, 2)
-        circles = cv2.HoughCircles(captured_frame_lab_red, cv2.HOUGH_GRADIENT, 1, captured_frame_lab_red.shape[0] / 8,
-                                   param1=100, param2=18, minRadius=30, maxRadius=120)
+        captured_frame_lab_red = cv2.inRange(
+            captured_frame_lab, np.array([40, 170, 170]), np.array([220, 255, 255]))
+        captured_frame_lab_red = cv2.GaussianBlur(
+            captured_frame_lab_red, (5, 5), 2, 2)
+        circles = cv2.HoughCircles(captured_frame_lab_red, cv2.HOUGH_GRADIENT, 1,
+                                   captured_frame_lab_red.shape[0] / 8,
+                                   param1=100, param2=18, minRadius=30,
+                                   maxRadius=120)
 
         gpio.set_pin(LED_PIN, circles is not None)
 
@@ -45,7 +50,8 @@ if __name__ == '__main__':
             for i, (cx, cy, r) in enumerate(circles):
                 if r > circles[max_ri][2]:
                     max_ri = i
-                cv2.circle(output_frame, center=(cx, cy), radius=r, color=(0, 255, 0), thickness=2)
+                cv2.circle(output_frame, center=(cx, cy), radius=r,
+                           color=(0, 255, 0), thickness=2)
             obj_pos = circles[max_ri][0] / output_frame.shape[1]
             if not (0.5 - OBJ_THRESHOLD < obj_pos < 0.5 + OBJ_THRESHOLD):
                 gpio.set_angle(SERVO_PIN, pos_to_deg(obj_pos))
