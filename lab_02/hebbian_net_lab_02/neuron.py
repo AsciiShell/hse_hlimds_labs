@@ -1,24 +1,20 @@
-import typing
-
-from .activation import ActFuncABC
+from .consts import VECTOR
 
 
 class Neuron:
-    def __init__(self, size: int, activation: ActFuncABC):
+    def __init__(self, size: int):
         self.size = size
-        self.activation = activation
         self.w = [0] * size
         self.bias = 0
 
-    def forward(self, vector: typing.List[int]) -> int:
+    def forward(self, vector: VECTOR) -> int:
         assert len(vector) == self.size, 'Unsupported vector shape'
         s = self.bias
         for w, x in zip(self.w, vector):
             s += w * x
-        out = self.activation(s)
-        return out
+        return s
 
-    def update_w(self, vector: typing.List[int], target: int):
+    def update_w(self, vector: VECTOR, target: int):
         assert len(vector) == self.size, 'Unsupported vector shape'
         self.bias += target
         for i, x in enumerate(vector):

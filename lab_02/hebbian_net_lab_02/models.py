@@ -2,20 +2,20 @@ import typing
 
 from tqdm.auto import tqdm
 
-from .neuron import Neuron
+from .consts import VECTOR, MATRIX
+from .layers import Dense
 
 
 class Model:
-    def __init__(self, net: Neuron):
+    def __init__(self, net: Dense):
         self.net = net
         self.epochs = 0
 
     def summary(self):
-        print("Dense: ", self.net.size)
-        print("Activation: ", self.net.activation)
+        print(self.net)
 
-    def fit(self, x: typing.List[typing.List[int]], y: typing.List[int],
-            epochs: int) -> typing.List[float]:
+    def fit(self, x: MATRIX, y: MATRIX, epochs: int) -> typing.List[float]:
+        assert len(x) == len(y), 'Data and labels have different shape'
         history = []
         for epoch in tqdm(range(epochs)):
             for x1, y1 in zip(x, y):
@@ -30,7 +30,7 @@ class Model:
                 break
         return history
 
-    def predict(self, x: typing.List[typing.List[int]]) -> typing.List[int]:
+    def predict(self, x: MATRIX) -> MATRIX:
         result = [self.net.forward(x1) for x1 in x]
         return result
 
