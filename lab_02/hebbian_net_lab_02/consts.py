@@ -1,0 +1,2 @@
+LOW_LEVEL = -1
+HIGH_LEVEL = 1
