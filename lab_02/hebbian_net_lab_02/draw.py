@@ -1,11 +1,11 @@
-from .consts import VECTOR, MATRIX
+from .consts import VECTOR, MATRIX, HIGH_LEVEL
 
 EMPTY_CHAR = ' '
 FULL_CHAR = '█'
 
 
 def _list_to_pic(img: VECTOR):
-    return ''.join([FULL_CHAR if x else EMPTY_CHAR for x in img])
+    return ''.join([FULL_CHAR if x == HIGH_LEVEL else EMPTY_CHAR for x in img])
 
 
 def draw(img: MATRIX):

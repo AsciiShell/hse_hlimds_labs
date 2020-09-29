@@ -25,7 +25,7 @@ class Model:
                 scores.append(y_true == y_pred)
             score = sum(scores) / len(scores)
             history.append(score)
-            self.epochs = epoch
+            self.epochs = epoch + 1
             if score == 1:
                 break
         return history
