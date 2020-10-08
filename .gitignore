@@ -156,3 +156,17 @@ cython_debug/
 *.toc
 
 *.synctex(busy)
+
+**/db/
+
+*.qws
+
+*.qdf
+
+**/incremental_db/
+
+**/output_files/
+
+**/simulation/
+
+**/greybox_tmp/
