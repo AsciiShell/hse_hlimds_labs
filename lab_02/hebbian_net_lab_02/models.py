@@ -2,7 +2,7 @@ import typing
 
 from tqdm.auto import tqdm
 
-from .consts import VECTOR, MATRIX
+from .consts import MATRIX
 from .layers import Dense
 
 

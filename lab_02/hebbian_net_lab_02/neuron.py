@@ -1,4 +1,4 @@
-from .consts import VECTOR
+from .consts import VECTOR, HIGH_LEVEL, LOW_LEVEL
 
 
 class Neuron:
@@ -12,7 +12,7 @@ class Neuron:
         s = self.bias
         for w, x in zip(self.w, vector):
             s += w * x
-        return s
+        return HIGH_LEVEL if s > 0 else LOW_LEVEL
 
     def update_w(self, vector: VECTOR, target: int):
         assert len(vector) == self.size, 'Unsupported vector shape'
