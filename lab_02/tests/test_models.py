@@ -1,10 +1,10 @@
-from hebbian_net_lab_02.consts import HIGH_LEVEL, LOW_LEVEL
-from hebbian_net_lab_02.layers import Dense
-from hebbian_net_lab_02.models import Model
+from hebbian_net_lab_02.net.consts import HIGH_LEVEL, LOW_LEVEL
+from hebbian_net_lab_02.net.layers import Dense
+from hebbian_net_lab_02.net.models import Model
 
 
 def test_model_00():
-    X = [[1, -1, 1, 1, 1, 1, -1, -1, 1], [1, 1, 1, 1, -1, 1, 1, -1, 1]]
+    X = [[1, 0, 1, 1, 1, 1, 0, 0, 1], [1, 1, 1, 1, 0, 1, 1, 0, 1]]
     y = [[HIGH_LEVEL], [LOW_LEVEL], ]
     model = Model(Dense(len(y[0]), len(X[0])))
     model.fit(X, y, 1000)
@@ -14,7 +14,7 @@ def test_model_00():
 
 
 def test_model_01():
-    X = [[1, -1, 1, 1, 1, 1, -1, -1, 1], [1, 1, 1, 1, -1, 1, 1, -1, 1]]
+    X = [[1, 0, 1, 1, 1, 1, 0, 0, 1], [1, 1, 1, 1, 0, 1, 1, 0, 1]]
     y = [[HIGH_LEVEL, LOW_LEVEL], [LOW_LEVEL, HIGH_LEVEL], ]
     model = Model(Dense(len(y[0]), len(X[0])))
     model.fit(X, y, 1000)

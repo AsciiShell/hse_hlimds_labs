@@ -49,9 +49,9 @@ class Neuron:
 
     def update_w(self, vector: VECTOR, target: int):
         assert len(vector) == self.size, 'Unsupported vector shape'
-        self.bias += target
+        self.bias += 1 if target else -1
         for i, x in enumerate(vector):
-            self.w[i] += x * target
+            self.w[i] += x * (1 if target else -1)
 
     def dump_verilog(self):
         num_size = 8
