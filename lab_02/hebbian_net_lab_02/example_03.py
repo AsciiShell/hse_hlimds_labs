@@ -8,11 +8,11 @@ from net.save_data import save_data
 
 if __name__ == '__main__':
     X = [
-        [1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1],
-        [1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1],
+        [0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+        [0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1],
         [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
         [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-        [1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1],
+        [0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, ],
         [1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1],
         [1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1],
         [1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0],
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         [0, 1, 1, 0],
     ]
     model = Model(Dense(len(y[0]), len(X[0])), 42)
-    model.fit(X, y, 1)
+    model.fit(X, y, 2)
     y_pred = model.predict(X)
     for y_true, y_expected, row in zip(y, y_pred, X):
         print('Expected: {}, predicted: {}'.format(y_true, y_expected))
@@ -36,7 +36,7 @@ if __name__ == '__main__':
         print()
 
     for row in X:
-        print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row))))
+        print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row[::-1]))))
 
     root = pathlib.Path(os.path.join(os.getcwd(), __file__)).parent.parent
     root = os.path.join(root, 'de10-nano')

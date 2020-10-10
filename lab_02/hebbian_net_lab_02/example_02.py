@@ -40,7 +40,8 @@ if __name__ == '__main__':
         print()
 
     for row in X:
-        print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row))))
+        print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row[::-1]))))
+
 
     root = pathlib.Path(os.path.join(os.getcwd(), __file__)).parent.parent
     root = os.path.join(root, 'de10-nano')

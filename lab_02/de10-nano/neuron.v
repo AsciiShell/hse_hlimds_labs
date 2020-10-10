@@ -1,3 +1,4 @@
+
 module neuron
 (
     input [19:0] x,
@@ -27,27 +28,27 @@ module neuron
     assign w[18] = weights[159:152];
     assign w[19] = weights[167:160];
     
-    wire [8:0] predict_000 = bias + x[0] ? w[0] : 8'h00;
-    wire [8:0] predict_001 = x[1] ? w[1] : 8'h00 + x[2] ? w[2] : 8'h00;
-    wire [8:0] predict_002 = x[3] ? w[3] : 8'h00 + x[4] ? w[4] : 8'h00;
-    wire [8:0] predict_003 = x[5] ? w[5] : 8'h00 + x[6] ? w[6] : 8'h00;
-    wire [8:0] predict_004 = x[7] ? w[7] : 8'h00 + x[8] ? w[8] : 8'h00;
-    wire [8:0] predict_005 = x[9] ? w[9] : 8'h00 + x[10] ? w[10] : 8'h00;
-    wire [8:0] predict_006 = x[11] ? w[11] : 8'h00 + x[12] ? w[12] : 8'h00;
-    wire [8:0] predict_007 = x[13] ? w[13] : 8'h00 + x[14] ? w[14] : 8'h00;
-    wire [8:0] predict_008 = x[15] ? w[15] : 8'h00 + x[16] ? w[16] : 8'h00;
-    wire [8:0] predict_009 = x[17] ? w[17] : 8'h00 + x[18] ? w[18] : 8'h00;
-    wire [8:0] predict_010 = x[19] ? w[19] : 8'h00 + predict_000;
-    wire [8:0] predict_011 = predict_001 + predict_002;
-    wire [8:0] predict_012 = predict_003 + predict_004;
-    wire [8:0] predict_013 = predict_005 + predict_006;
-    wire [8:0] predict_014 = predict_007 + predict_008;
-    wire [8:0] predict_015 = predict_009 + predict_010;
-    wire [8:0] predict_016 = predict_011 + predict_012;
-    wire [8:0] predict_017 = predict_013 + predict_014;
-    wire [8:0] predict_018 = predict_015 + predict_016;
-    wire [8:0] predict_019 = predict_017 + predict_018;
-    assign predict = predict_019 > 0;
+    wire [7:0] predict_000 = bias + (x[0] ? w[0] : 8'h00);
+    wire [7:0] predict_001 = (x[1] ? w[1] : 8'h00) + (x[2] ? w[2] : 8'h00);
+    wire [7:0] predict_002 = (x[3] ? w[3] : 8'h00) + (x[4] ? w[4] : 8'h00);
+    wire [7:0] predict_003 = (x[5] ? w[5] : 8'h00) + (x[6] ? w[6] : 8'h00);
+    wire [7:0] predict_004 = (x[7] ? w[7] : 8'h00) + (x[8] ? w[8] : 8'h00);
+    wire [7:0] predict_005 = (x[9] ? w[9] : 8'h00) + (x[10] ? w[10] : 8'h00);
+    wire [7:0] predict_006 = (x[11] ? w[11] : 8'h00) + (x[12] ? w[12] : 8'h00);
+    wire [7:0] predict_007 = (x[13] ? w[13] : 8'h00) + (x[14] ? w[14] : 8'h00);
+    wire [7:0] predict_008 = (x[15] ? w[15] : 8'h00) + (x[16] ? w[16] : 8'h00);
+    wire [7:0] predict_009 = (x[17] ? w[17] : 8'h00) + (x[18] ? w[18] : 8'h00);
+    wire [7:0] predict_010 = (x[19] ? w[19] : 8'h00) + predict_000;
+    wire [7:0] predict_011 = predict_001 + predict_002;
+    wire [7:0] predict_012 = predict_003 + predict_004;
+    wire [7:0] predict_013 = predict_005 + predict_006;
+    wire [7:0] predict_014 = predict_007 + predict_008;
+    wire [7:0] predict_015 = predict_009 + predict_010;
+    wire [7:0] predict_016 = predict_011 + predict_012;
+    wire [7:0] predict_017 = predict_013 + predict_014;
+    wire [7:0] predict_018 = predict_015 + predict_016;
+    wire [7:0] predict_019 = predict_017 + predict_018;
+    assign predict = predict_019[7] == 0;
 
 
 endmodule

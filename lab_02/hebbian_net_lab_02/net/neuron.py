@@ -65,7 +65,7 @@ class Neuron:
 
         list_sum = ['bias']
         for i in range(self.size):
-            list_sum.append("x[{}] ? w[{}] : {}'h00".format(i, i, num_size))
+            list_sum.append("(x[{}] ? w[{}] : {}'h00)".format(i, i, num_size))
         list_draw = []
         while len(list_sum) > 1:
             a = list_sum.pop(0)
@@ -77,7 +77,7 @@ class Neuron:
         list_draw.append('    assign predict = {}[{}] == 0;'.format(list_sum[-1], num_size - 1))
         list_draw = '\n'.join(list_draw)
 
-        weights_init = ''.join([as_hex(x) for x in [self.bias] + self.w])
+        weights_init = ''.join([as_hex(x) for x in [self.bias] + self.w][::-1])
 
         code = VERILOG_TEMPLATE.format(
             SIZE=self.size - 1, NUM_SIZE=num_size - 1, WEIGHTS_SIZE=weights_size - 1, LIST_SUM=list_draw, WEIGHTS_MAP=weights_map)
