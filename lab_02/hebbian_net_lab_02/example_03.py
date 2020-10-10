@@ -35,5 +35,7 @@ if __name__ == '__main__':
         w, code = n.dump_verilog()
         weights.append(w)
     weights = '\n'.join(weights)
+    for row in X:
+        print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row))))
     print(weights)
     print(code)

@@ -69,7 +69,7 @@ class Neuron:
             a = list_sum.pop(0)
             b = list_sum.pop(0)
             name = 'predict_{:03d}'.format(len(list_draw))
-            text = '    assign {} = {} + {};'.format(name, a, b)
+            text = '    wire [{}:0] {} = {} + {};'.format(num_size, name, a, b)
             list_sum.append(name)
             list_draw.append(text)
         list_draw.append('    assign predict = {} > 0;'.format(list_sum[-1]))

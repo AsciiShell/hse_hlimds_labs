@@ -7,13 +7,10 @@ module layer
     output [SIZE - 1:0] predict
 );
     reg [167:0] weights [SIZE - 1:0];
-    genvar i;
-    generate
-        for(i = 0; i < SIZE; i = i + 1) 
-        begin: 
-            neuron neuron(x, weights[i], predict[i]);
-        end
-    endgenerate
+neuron neuron1(x, weights[0], predict[0]);
+neuron neuron2(x, weights[1], predict[1]);
+neuron neuron3(x, weights[2], predict[2]);
+neuron neuron4(x, weights[3], predict[3]);
 
     initial begin
         $readmemh ("program.hex", weights);
