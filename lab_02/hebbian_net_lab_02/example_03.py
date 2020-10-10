@@ -30,4 +30,10 @@ if __name__ == '__main__':
         print('Expected: {}, predicted: {}'.format(y_true, y_expected))
         draw_flatten(row, 4, 5)
         print()
-    print(model.net.neurons[0].dump_verilog())
+    weights = []
+    for n in model.net.neurons:
+        w, code = n.dump_verilog()
+        weights.append(w)
+    weights = '\n'.join(weights)
+    print(weights)
+    print(code)

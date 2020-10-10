@@ -18,17 +18,15 @@ VERILOG_TEMPLATE = '''
 module neuron
 (
     input [{SIZE}:0] x,
+    input [{WEIGHTS_SIZE}:0] weights,
     output predict
 );
-    reg [{NUM_SIZE}:0] bias;
-    reg [{NUM_SIZE}:0] w [{SIZE}:0];
+    wire [{NUM_SIZE}:0] bias = weights[{NUM_SIZE}:0];
+    wire [{NUM_SIZE}:0] w [{SIZE}:0];
+{WEIGHTS_MAP}
+    
+{LIST_SUM}
 
-    assign predict = ( bias + {MATRIX}) > 0;
-
-    initial begin
-		bias = {NUM_SIZE}'h{BIAS_W};
-{MATRIX_DATA}
-    end
 
 endmodule
 '''
@@ -55,15 +53,33 @@ class Neuron:
 
     def dump_verilog(self):
         num_size = 8
-        mat_mul = []
+        weights_size = (self.size + 1) * num_size
+
+        weights_map = []
         for i in range(self.size):
-            mat_mul.append(f"x[{i}] * w[{i}]")
-        mat_mul = ' + '.join(mat_mul)
-        bias = as_hex(self.bias)
-        w = '\n'.join(["		w[{}] = {}'h{};".format(i, num_size, as_hex(x)) for i, x in enumerate(self.w)])
-        code = VERILOG_TEMPLATE.format(SIZE=self.size - 1, NUM_SIZE=num_size - 1, MATRIX=mat_mul, BIAS_W=bias,
-                                       MATRIX_DATA=w)
-        return code
+            weights_map.append('    assign w[{}] = weights[{}:{}];'.format(
+                i, (i + 2) * num_size - 1, (i + 1) * num_size))
+        weights_map = '\n'.join(weights_map)
+
+        list_sum = ['bias']
+        for i in range(self.size):
+            list_sum.append("x[{}] ? w[{}] : {}'h00".format(i, i, num_size))
+        list_draw = []
+        while len(list_sum) > 1:
+            a = list_sum.pop(0)
+            b = list_sum.pop(0)
+            name = 'predict_{:03d}'.format(len(list_draw))
+            text = '    assign {} = {} + {};'.format(name, a, b)
+            list_sum.append(name)
+            list_draw.append(text)
+        list_draw.append('    assign predict = {} > 0;'.format(list_sum[-1]))
+        list_draw = '\n'.join(list_draw)
+
+        weights_init = ''.join([as_hex(x) for x in [self.bias] + self.w])
+
+        code = VERILOG_TEMPLATE.format(
+            SIZE=self.size - 1, NUM_SIZE=num_size - 1, WEIGHTS_SIZE=weights_size - 1, LIST_SUM=list_draw, WEIGHTS_MAP=weights_map)
+        return weights_init, code
 
 
 __all__ = ['Neuron']
