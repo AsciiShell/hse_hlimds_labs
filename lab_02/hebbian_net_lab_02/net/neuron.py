@@ -74,14 +74,15 @@ class Neuron:
             text = '    wire [{}:0] {} = {} + {};'.format(num_size - 1, name, a, b)
             list_sum.append(name)
             list_draw.append(text)
-        list_draw.append('    assign predict = {}[{}] == 0;'.format(list_sum[-1], num_size - 1))
+        it = '    assign predict = {}[{}] == 0;'.format(list_sum[-1], num_size - 1)
+        list_draw.append(it)
         list_draw = '\n'.join(list_draw)
 
         weights_init = ''.join([as_hex(x) for x in [self.bias] + self.w][::-1])
 
         code = VERILOG_TEMPLATE.format(
-            SIZE=self.size - 1, NUM_SIZE=num_size - 1, WEIGHTS_SIZE=weights_size - 1, LIST_SUM=list_draw,
-            WEIGHTS_MAP=weights_map)
+            SIZE=self.size - 1, NUM_SIZE=num_size - 1, WEIGHTS_SIZE=weights_size - 1,
+            LIST_SUM=list_draw, WEIGHTS_MAP=weights_map)
         return weights_init, code
 
 

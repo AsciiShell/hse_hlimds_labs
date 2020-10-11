@@ -21,7 +21,6 @@ if __name__ == '__main__':
     for row in X:
         print("        x = {}'b{};#(Tt);".format(len(row), ''.join(map(str, row[::-1]))))
 
-
     root = pathlib.Path(os.path.join(os.getcwd(), __file__)).parent.parent
     root = os.path.join(root, 'de10-nano')
     save_data(model, os.path.join(root, 'program.hex'), os.path.join(root, 'neuron.v'))
