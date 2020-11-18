@@ -1,0 +1,3 @@
+[submodule "lab_03/Verilog-Generator-of-Neural-Net-Digit-Detector-for-FPGA"]
+	path = lab_03/Verilog-Generator-of-Neural-Net-Digit-Detector-for-FPGA
+	url = https://github.com/AsciiShell/Verilog-Generator-of-Neural-Net-Digit-Detector-for-FPGA.git

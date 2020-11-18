@@ -1,0 +1,74 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+    \input{data/title.tex}
+    \tableofcontents
+    \pagebreak
+
+
+    \section{Задание}
+
+    Бригада №5.
+
+    \begin{enumerate}
+        \item Запустить реализацию MobileNet на DE0-Nano;
+        \item Заменить камеру OV7670 на D8M.
+    \end{enumerate}
+
+
+    \section{Выполнение работы}
+
+    \subsection{Установка зависимостей}
+
+	Для работы была установлена последняя версия python 3.5, имеющая собранные бинарные коды.
+	Далее была выполнена установка зависимостей проекта с указанием версий для ключевых пакетов.
+	
+	{\small \VerbatimInput{../requirements.txt}}
+
+	\subsection{Основное задание}
+	
+	Было выполнено обучение нейронной сети, подобраны параметры генерации весов, созданы необходимые verilog файлы.
+	После итоговый проект был собран и загружен на плату.
+	
+	\subsection{Дополнительное задание}
+	
+	Была выполнена миграция на камеру D8M. 
+	Это камера, в основе которой лежит камера OV8865.
+	Полученный проект был загружен на плату и протестирован.
+
+    \section{Исходные коды}
+
+    Исходные коды доступны на \href{https://github.com/AsciiShell/hse_hlimds_labs}
+    {https://github.com/AsciiShell/hse\_hlimds\_labs}.
+
+    Pull request работы \href{https://github.com/AsciiShell/hse_hlimds_labs/pull/3}
+    {https://github.com/AsciiShell/hse\_hlimds\_labs/pull/3}.
+
+
+    \section{Выводы по работе}
+    В ходе работы была обучена нейронная сеть MobileNet для распознавания цифр.
+    Итоговая нейросеть была сконвертирована на плату DE0-Nano и запущена с подключенной камерой и LCD дисплеем, на который выводилось изображение.
+    Дополнительно была проведена работа по замене камеры на D8M.
+
+	\pagebreak
+	\begin{landscape}
+	\begin{spacing}{15}
+		{\fontsize{200}{220}\selectfont 1 \hfill 2 \hfill 3 \hfill 4 \hfill 5 
+			
+		 6 \hfill 7 \hfill 8 \hfill 9 \hfill 0}
+	\end{spacing}
+	\end{landscape}
+
+
+\end{document} % конец документа
