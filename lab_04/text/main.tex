@@ -1,0 +1,66 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+    \input{data/title.tex}
+    \tableofcontents
+    \pagebreak
+
+
+    \section{Задание}
+
+    Бригада №5.
+
+    \begin{enumerate}
+        \item задание
+    \end{enumerate}
+
+
+    \section{Выполнение работы}
+
+    \subsection{Задание №5}
+
+    Была выполнена программа examples/tutorials/systemverilog/dpi_basic/.
+    Результат представлен на рис.~\ref{05_wave}.
+    Сначала включается цвет по умолчанию -- красный, затем включается зеленый, после управление передается в С код.
+    В C коде печатается сообщение, включается желтый свет, вызывается функция $sv\_WaitForRed$, которая ожидает 10нс, 
+    после включается красный свет, управление возвращается в SystemVerilog.
+    Через 10нс снова включается зеленый.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{images/05_wave}
+        \caption{Вейвформа для dpi_basic}
+        \label{fig:05_wave}
+    \end{figure}
+	
+	{\small \VerbatimInput{../requirements.txt}}
+
+	\subsection{Основное задание}
+	
+	
+	\subsection{Дополнительное задание}
+	
+
+    \section{Исходные коды}
+
+    Исходные коды доступны на \href{https://github.com/AsciiShell/hse_hlimds_labs}
+    {https://github.com/AsciiShell/hse\_hlimds\_labs}.
+
+    Pull request работы \href{https://github.com/AsciiShell/hse_hlimds_labs/pull/4}
+    {https://github.com/AsciiShell/hse\_hlimds\_labs/pull/4}.
+
+
+    \section{Выводы по работе}
+
+\end{document} % конец документа

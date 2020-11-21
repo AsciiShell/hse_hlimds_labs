@@ -174,3 +174,5 @@ cython_debug/
 **/sim/
 
 **/c5_pin_model_dump.txt
+
+lab_04/examples/
