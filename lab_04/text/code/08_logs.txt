@@ -1,0 +1,36 @@
+# clone_struct_oarr: dim:1, incr:-1, size:10, left:11, right:20, low:11, high:20
+# clone_struct_oarr: '{'{x:1, y:9}, '{x:2, y:8}, '{x:3, y:7}, '{x:4, y:6}, '{x:5, y:5}, '{x:6, y:4}, '{x:7, y:3}, '{x:8, y:2}, '{x:9, y:1}, '{x:0, y:10}}
+# clone_struct_oarr_memcpy: '{'{x:1, y:9}, '{x:2, y:8}, '{x:3, y:7}, '{x:4, y:6}, '{x:5, y:5}, '{x:6, y:4}, '{x:7, y:3}, '{x:8, y:2}, '{x:9, y:1}, '{x:0, y:10}}
+# clone_struct_oarr_safe: '{'{x:1, y:9}, '{x:2, y:8}, '{x:3, y:7}, '{x:4, y:6}, '{x:5, y:5}, '{x:6, y:4}, '{x:7, y:3}, '{x:8, y:2}, '{x:9, y:1}, '{x:0, y:10}}
+# clone_bitvec_oarr_by_elemptr: dim:1, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_bitvec_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bitvec_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bitvec_2D_oarr_by_elemptr: dim:2, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_bitvec_2D_oarr_by_elemptr: dim:1, incr:1, size:8, left:7, right:0, low:0, high:7
+# clone_bitvec_2D_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bitvec_2D_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bitvec_2D_oarr_by_elemptr: dim:3, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_bitvec_2D_oarr_by_elemptr: dim:2, incr:1, size:8, left:7, right:0, low:0, high:7
+# clone_bitvec_2D_oarr_by_elemptr: dim:1, incr:1, size:12, left:11, right:0, low:0, high:11
+# clone_bitvec_3D_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bitvec_3D_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_oarr_by_elemptr: dim:1, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_logicvec_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_2D_oarr_by_elemptr: dim:2, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_logicvec_2D_oarr_by_elemptr: dim:1, incr:1, size:8, left:7, right:0, low:0, high:7
+# clone_logicvec_2D_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_2D_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_3D_oarr_by_elemptr: dim:3, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_logicvec_3D_oarr_by_elemptr: dim:2, incr:1, size:8, left:7, right:0, low:0, high:7
+# clone_logicvec_3D_oarr_by_elemptr: dim:1, incr:1, size:12, left:11, right:0, low:0, high:11
+# clone_logicvec_3D_oarr_by_elemptr: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_logicvec_3D_oarr_by_elemval: '{8, 7, 6, 5, 4, 3}, expecting '{8, 7, 6, 5, 4, 3}
+# clone_bit_oarr: dim:1, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_bit_oarr: '{1, 0, 1, 0, 1, 0}, expecting '{1, 0, 1, 0, 1, 0}
+# clone_bit_2D_oarr: '{1, 0, 1, 0, 1, 0}, expecting '{1, 0, 1, 0, 1, 0}
+# clone_bit_3D_oarr: '{1, 0, 1, 0, 1, 0}, expecting '{1, 0, 1, 0, 1, 0}
+# clone_logic_oarr: dim:1, incr:1, size:6, left:5, right:0, low:0, high:5
+# clone_logic_oarr: '{0, 1, 0, 1, 0, 1}, expecting '{0, 1, 0, 1, 0, 1}
+# clone_logic_2D_oarr: '{0, 1, 0, 1, 0, 1}, expecting '{0, 1, 0, 1, 0, 1}
+# clone_logic_3D_oarr: '{0, 1, 0, 1, 0, 1}, expecting '{0, 1, 0, 1, 0, 1}
