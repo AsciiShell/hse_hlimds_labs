@@ -25,7 +25,7 @@
 
     \begin{enumerate}
         \item Ознакомиться с примерами использования DPI и PLI/VPI;
-        \item Создать дешифратор 17 разрядный с использованием  DPI;
+        \item Создать дешифратор 17 разрядный с использованием DPI;
         \item Создать функцию, изменяющую четные числа в массиве на 1.
     \end{enumerate}
 
@@ -54,181 +54,182 @@
         \label{fig:05_wave}
     \end{figure}
 
-	\subsection{Задание №6}
-	
-	Был изучен пример examples/systemverilog/dpi/dpivpipert.
-	В данном примере сравниваются подходы PLI/VPI и DPI.
-	
-	Первый подход требует большое число кода для генерации и регистрации функций, объявлении стандартных полей.
-	DPI же лаконичен и довольно прост, не требует большого числа кода
-	DPI является развитием PLI/VPI, логичнее использовать его.
-	
-	\subsection{Задание №7}
-	
-	Был изучен пример examples/systemverilog/dpi/simple\_calls.
-	
-	В данном примере показываются способы вызова C методов из SystemVerilog и наоборот.
-	
-	Исходный код С:
-	{\small \VerbatimInput{code/07_cimports.c}}
-	
-	Исходный код SystemVerilog:
-	{\small \VerbatimInput{code/07_simple_calls.sv}}
-	
-	Результат выполнения:
-	{\small \VerbatimInput{code/07_results.txt}}
-	
-	\subsection{Задание №8}
-	
-	Был изучен пример examples/systemverilog/dpi/openarray.
-	
-	В данном примере демонстрируются различные способы обработки массивов различной размерности.
-	Данный подход был использован в работе.
-	
-	Результат выполнения:
-	{\small \VerbatimInput{code/08_logs.txt}}
-	
-	\subsection{Задание №9}
-	
-	Был изучен пример examples/systemverilog/dpi/packed\_types.
-	
-	Результат выполнения:
-	{\small \VerbatimInput{code/09_packed_logs.txt}}
-	
-	Был изучен пример examples/systemverilog/dpi/unpacked\_types.
-	
-	Результат выполнения:
-	{\small \VerbatimInput{code/09_unpacked_logs.txt}}
-	
-	При передаче неупакованных данных требуется дополнительно совершать операции упаковки и распаковки.
-	
-	\subsection{Задание №10}
-	
-	Был изучен пример examples/systemverilog/dpi/checkpoint.
-	
-	Данная технология может применяться для выполнения теста с некоторого ненулевого этапа,
-	например -- для пропуска длительных этапов.
-	
-	\subsection{Задание №11}
-	
-	Был изучен пример examples/systemverilog/dpi/cpackages.
-	
-	В данном примере изучаются различные способы выполнения команд и проверки их статуса.
-	
-	\subsection{Задание №12}
-	
-	Был изучен пример examples/systemverilog/dpi/create\_sv\_dynarray.
-	
-	Данная технология может применяться для работы с массивами неизвестной начальной длины.
-	
+    \subsection{Задание №6}
+
+    Был изучен пример examples/systemverilog/dpi/dpivpipert.
+    В данном примере сравниваются подходы PLI/VPI и DPI.
+
+    Первый подход требует большое число кода для генерации и регистрации функций, объявлении стандартных полей.
+    DPI же лаконичен и довольно прост, не требует большого числа кода
+    DPI является развитием PLI/VPI, логичнее использовать его.
+
+    \subsection{Задание №7}
+
+    Был изучен пример examples/systemverilog/dpi/simple\_calls.
+
+    В данном примере показываются способы вызова C методов из SystemVerilog и наоборот.
+
+    Исходный код С:
+    {\small \VerbatimInput{code/07_cimports.c}}
+
+    Исходный код SystemVerilog:
+    {\small \VerbatimInput{code/07_simple_calls.sv}}
+
+    Результат выполнения:
+    {\small \VerbatimInput{code/07_results.txt}}
+
+    \subsection{Задание №8}
+
+    Был изучен пример examples/systemverilog/dpi/openarray.
+
+    В данном примере демонстрируются различные способы обработки массивов различной размерности.
+    Данный подход был использован в работе.
+
+    Результат выполнения:
+    {\small \VerbatimInput{code/08_logs.txt}}
+
+    \subsection{Задание №9}
+
+    Был изучен пример examples/systemverilog/dpi/packed\_types.
+
+    Результат выполнения:
+    {\small \VerbatimInput{code/09_packed_logs.txt}}
+
+    Был изучен пример examples/systemverilog/dpi/unpacked\_types.
+
+    Результат выполнения:
+    {\small \VerbatimInput{code/09_unpacked_logs.txt}}
+
+    При передаче неупакованных данных требуется дополнительно совершать операции упаковки и распаковки.
+
+    \subsection{Задание №10}
+
+    Был изучен пример examples/systemverilog/dpi/checkpoint.
+
+    Данная технология может применяться для выполнения теста с некоторого ненулевого этапа,
+    например -- для пропуска длительных этапов.
+
+    \subsection{Задание №11}
+
+    Был изучен пример examples/systemverilog/dpi/cpackages.
+
+    В данном примере изучаются различные способы выполнения команд и проверки их статуса.
+
+    \subsection{Задание №12}
+
+    Был изучен пример examples/systemverilog/dpi/create\_sv\_dynarray.
+
+    Данная технология может применяться для работы с массивами неизвестной начальной длины.
+
+
     \section{Самостоятельная работа}
-    
+
     \subsection{Мультиплексор}
-    
+
     Была выполнена программа examples/systemverilog/dpi/mux81.
     Корректный результат работы представлен на рис.~\ref{fig:02_mux_ok}.
-    
+
     \begin{figure}[H]
-    	\centering
-    	\includegraphics[width=\linewidth]{images/02_mux_ok}
-    	\caption{Корректная работа мультиплексора}
-    	\label{fig:02_mux_ok}
+        \centering
+        \includegraphics[width=\linewidth]{images/02_mux_ok}
+        \caption{Корректная работа мультиплексора}
+        \label{fig:02_mux_ok}
     \end{figure}
-    
+
     Далее были поданы некоторые сигналы равные b или z.
     Результат работы представлен на рис.~\ref{fig:02_mux_bz}.
     Вывод программы:
     {\small \VerbatimInput{code/02_mux_bz.txt}}
-    
+
     \begin{figure}[H]
-		\centering
-		\includegraphics[width=\linewidth]{images/02_mux_bz}
-		\caption{Подача b и z на мультиплексор}
-		\label{fig:02_mux_bz}
-	\end{figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/02_mux_bz}
+        \caption{Подача b и z на мультиплексор}
+        \label{fig:02_mux_bz}
+    \end{figure}
 
     После была внесена ошибка в обработку сигналов мультиплексора.
-	Результат работы представлен на рис.~\ref{fig:02_mux_error}.
-	Вывод программы:
-	{\small \VerbatimInput{code/02_mux_error.txt}}
+    Результат работы представлен на рис.~\ref{fig:02_mux_error}.
+    Вывод программы:
+    {\small \VerbatimInput{code/02_mux_error.txt}}
 
     \begin{figure}[H]
-		\centering
-		\includegraphics[width=\linewidth]{images/02_mux_error}
-		\caption{Ошибка мультиплексора}
-		\label{fig:02_mux_error}
-	\end{figure}
+        \centering
+        \includegraphics[width=\linewidth]{images/02_mux_error}
+        \caption{Ошибка мультиплексора}
+        \label{fig:02_mux_error}
+    \end{figure}
 
-	\subsection{Дешифратор}
+    \subsection{Дешифратор}
 
-	В соответствии с заданием был разработан дешифратор 17 разрядный.
-	Вейвформа представлена на рис.~\ref{fig:02_decoder}.
-	
-	Исходный код C:
-	{\small \VerbatimInput{../decoder/decoder.c}}
-	
-	Исходный код Verilog модуля:
-	{\small \VerbatimInput{../decoder/decoder17.v}}
-	
-	Исходный код тестирования Verilog модуля:
-	{\small \VerbatimInput{../decoder/decoder17_test.v}}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\linewidth]{images/02_decoder}
-		\caption{Результат работы декодера}
-		\label{fig:02_decoder}
-	\end{figure}
+    В соответствии с заданием был разработан дешифратор 17 разрядный.
+    Вейвформа представлена на рис.~\ref{fig:02_decoder}.
 
-	Результат работы программы:
-	{\small \VerbatimInput{code/02_decoder_ok.txt}}
+    Исходный код C:
+    {\small \VerbatimInput{../decoder/decoder.c}}
 
-	В исходный код была внесена ошибка, появились отличия в работе программы.
-	{\small \VerbatimInput{code/02_decoder_error.txt}}
-	
- 	\subsection{Последовательность Фибоначчи}
-	
-	Была выполнена программа examples/systemverilog/dpi/fibonacci.
-	Корректный результат работы представлен на рис.~\ref{fig:03_fib}.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\linewidth]{images/03_fib}
-		\caption{Корректная работа последовательности Фибоначчи}
-		\label{fig:03_fib}
-	\end{figure}
-	
-	В программу была внесена ошибка, после чего появились множественные ошибки:
-	{\small \VerbatimInput{code/03_fib_error.txt}}
-	
-	Далее функция была переписана в рекурсивном варианте:
-	{\small \VerbatimInput{../fibonacci/fibonacci.c}}
-		
-	Полученный вариант прошел тесты.
-	
-	\subsection{Работа с массивами}
-	
-	Необходимо изменить исходный массив таким образом, что все четные элементы заменяются 1.
-	Вейвформа представлена на рис.~\ref{fig:04_extra}.
-	Можно заметить баг вейвформы -- в консоли результат отображается корректно.
-	
-	Исходный код C:
-	{\small \VerbatimInput{../extra/extra.c}}
+    Исходный код Verilog модуля:
+    {\small \VerbatimInput{../decoder/decoder17.v}}
 
-	Исходный код тестирования модуля:
-	{\small \VerbatimInput{../extra/extra_test.v}}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\linewidth]{images/04_extra}
-		\caption{Результат работы программы}
-		\label{fig:04_extra}
-	\end{figure}
-	
-	Результат работы программы:
-	{\small \VerbatimInput{code/04_extra.txt}}
-	
-	
+    Исходный код тестирования Verilog модуля:
+    {\small \VerbatimInput{../decoder/decoder17_test.v}}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{images/02_decoder}
+        \caption{Результат работы декодера}
+        \label{fig:02_decoder}
+    \end{figure}
+
+    Результат работы программы:
+    {\small \VerbatimInput{code/02_decoder_ok.txt}}
+
+    В исходный код была внесена ошибка, появились отличия в работе программы.
+    {\small \VerbatimInput{code/02_decoder_error.txt}}
+
+    \subsection{Последовательность Фибоначчи}
+
+    Была выполнена программа examples/systemverilog/dpi/fibonacci.
+    Корректный результат работы представлен на рис.~\ref{fig:03_fib}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{images/03_fib}
+        \caption{Корректная работа последовательности Фибоначчи}
+        \label{fig:03_fib}
+    \end{figure}
+
+    В программу была внесена ошибка, после чего появились множественные ошибки:
+    {\small \VerbatimInput{code/03_fib_error.txt}}
+
+    Далее функция была переписана в рекурсивном варианте:
+    {\small \VerbatimInput{../fibonacci/fibonacci.c}}
+
+    Полученный вариант прошел тесты.
+
+    \subsection{Работа с массивами}
+
+    Необходимо изменить исходный массив таким образом, что все четные элементы заменяются 1.
+    Вейвформа представлена на рис.~\ref{fig:04_extra}.
+    Можно заметить баг вейвформы -- в консоли результат отображается корректно.
+
+    Исходный код C:
+    {\small \VerbatimInput{../extra/extra.c}}
+
+    Исходный код тестирования модуля:
+    {\small \VerbatimInput{../extra/extra_test.v}}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{images/04_extra}
+        \caption{Результат работы программы}
+        \label{fig:04_extra}
+    \end{figure}
+
+    Результат работы программы:
+    {\small \VerbatimInput{code/04_extra.txt}}
+
+
     \section{Исходные коды}
 
     Исходные коды доступны на \href{https://github.com/AsciiShell/hse_hlimds_labs}
@@ -239,7 +240,7 @@
 
 
     \section{Выводы по работе}
-    
+
     В ходе работы был изучены технологии DPI и PLI/VPI, их отличия.
     Был получен опыт написания C методов, передачи данных и вызовов C кода из SystemVerilog и наоборот.
     Были написаны самостоятельно модули для верификации работы некоторых устройств и проверки их работы на наличие ошибок.
