@@ -176,3 +176,11 @@ cython_debug/
 **/c5_pin_model_dump.txt
 
 lab_04/examples/
+
+*.wlf
+
+**/work/
+
+**/transcript
+
+**/_info
