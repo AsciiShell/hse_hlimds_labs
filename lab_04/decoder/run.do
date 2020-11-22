@@ -8,7 +8,7 @@ if [file exists work] {
 vlib work
 
 # Compile the HDL source(s)
-vlog -sv -dpiheader decoder.h decoder17_test.v decoder.c
+vlog -sv -dpiheader decoder.h decoder17_test.v decoder17.v decoder.c
 
 # Simulate the design
 onerror {quit -sim}
@@ -19,9 +19,11 @@ onbreak {resume}
 log -r *
 add wave -divider "INPUTS"
 add wave /decoder17_test/src
+add wave /decoder17_test/src_verilog
 add wave -divider "OUTPUTS"
 add wave /decoder17_test/out
+add wave /decoder17_test/out_verilog
 
 # run simulation
 run -all
-quit -f
+# quit -f

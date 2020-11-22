@@ -25,7 +25,7 @@
 
 DPI_LINK_DECL DPI_DLLESPEC
 void
-decoder17(
+decoder17_c(
     int select,
     svBitVecVal* out);
 

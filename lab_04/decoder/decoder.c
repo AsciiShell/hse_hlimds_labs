@@ -1,6 +1,6 @@
 #include "decoder.h"
 
-void decoder17(const int select, svBitVecVal* out) 
+void decoder17_c(const int select, svBitVecVal* out) 
 { 
     out[0] = 1 << select;
 }

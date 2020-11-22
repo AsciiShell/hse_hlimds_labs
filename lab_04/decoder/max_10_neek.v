@@ -252,6 +252,7 @@ module max_10_neek(
     //cores
     decoder17 decoder17
     (
+		.clk (MAX10_CLK1_50),
         .select      ( SW [7:0]     ),
         .out      ( out     ),
     );
