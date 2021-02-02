@@ -1,0 +1,7 @@
+	component multiprocessor_tutorial_main_system is
+		port (
+			clk_clk_in_reset_reset_n : in std_logic := 'X'; -- reset_n
+			clk_in_clk               : in std_logic := 'X'  -- clk
+		);
+	end component multiprocessor_tutorial_main_system;
+

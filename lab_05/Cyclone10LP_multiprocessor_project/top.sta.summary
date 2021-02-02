@@ -1,0 +1,49 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clkin_50'
+Slack : 6.022
+TNS   : 0.000
+
+Type  : Setup 'altera_reserved_tck'
+Slack : 44.373
+TNS   : 0.000
+
+Type  : Hold 'clkin_50'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Hold 'altera_reserved_tck'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Recovery 'clkin_50'
+Slack : 15.509
+TNS   : 0.000
+
+Type  : Recovery 'altera_reserved_tck'
+Slack : 46.007
+TNS   : 0.000
+
+Type  : Removal 'clkin_50'
+Slack : 1.063
+TNS   : 0.000
+
+Type  : Removal 'altera_reserved_tck'
+Slack : 1.539
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clkin_125'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clkin_50'
+Slack : 9.506
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.582
+TNS   : 0.000
+
+------------------------------------------------------------
