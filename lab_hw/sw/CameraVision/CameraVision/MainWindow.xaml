@@ -1,0 +1,65 @@
+﻿<Window x:Class="CameraVision.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Loaded="Window_Loaded"        
+        SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"
+        Height="770" Width="1420" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <!--<Setter Property="Margin" Value="5,5,5,0" />-->
+            </Style>
+            <Style TargetType="GroupBox">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="210*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding Image}" Margin="10" Grid.Column="1" Grid.Row="1" />
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="1027,0,0,0">
+
+            <!--<Button Content="Focus Bracketing" Command="{Binding FocusBracketingCommand}" Margin="10" />-->
+            <!--<Button Content="Exposure Bracketing" Command="{Binding ExposureBracketingCommand}" Margin="10" />-->
+
+        </StackPanel>
+        <GroupBox Grid.Column="1" Header="Image" Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Update" Command="{Binding DownloadImageCommand}" />
+                <Button Content="Save" Command="{Binding SaveImageCommand}" Grid.Column="1" />
+                <ComboBox Grid.Column="2" Grid.ColumnSpan="2" Margin="5" ItemsSource="{Binding VideoSettings}" SelectedIndex="0" SelectedItem="{Binding CurrentVideoSetting}" VerticalAlignment="Center" />
+                <ComboBox Grid.Column="4" Grid.ColumnSpan="2" Margin="5" ItemsSource="{Binding DemosaicingAlgorithms}" SelectedIndex="0" SelectedItem="{Binding CurrentDemosaicingAlgorithm}" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="6" TextWrapping="Wrap" Text="{Binding FPS, FallbackValue=0 fps, StringFormat=\{0\} fps}" VerticalAlignment="Center"/>
+
+                <!--<TextBox Grid.Column="2" Text="{Binding ImageWidth}" />
+                <TextBox Grid.Column="3" Text="{Binding ImageHeight}" />-->
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
